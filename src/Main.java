@@ -41,7 +41,6 @@ public class Main {
         checkNumberOfOperators();
         findOfNumbers();
         checkOperatorIfLessThanOne();
-        System.out.println(str[0]);
         checkNumbersLessThanTwo();
         solution();
         return result;
