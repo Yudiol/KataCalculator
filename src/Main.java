@@ -40,8 +40,9 @@ public class Main {
     public static String calc(String input) {
         checkNumberOfOperators();
         findOfNumbers();
-        checkNumbersLessThanTwo();
         checkOperatorIfLessThanOne();
+        System.out.println(str[0]);
+        checkNumbersLessThanTwo();
         solution();
         return result;
     }
@@ -64,7 +65,6 @@ public class Main {
                     System.exit(0);
                 }
             }
-
             result = convertFromArabicToRoman(var + "");
 
         } else if (num1 == 0 && num2 == 0) {
@@ -93,7 +93,7 @@ public class Main {
     }
 
     static void checkNumbersLessThanTwo() {
-        if (str.length < 2) {
+        if (str.length < 2 || str[0].equals("")) {
             try {
                 throw new Exception();
             } catch (Exception e) {
@@ -107,7 +107,6 @@ public class Main {
         if (number.contains("+")) {
             str = number.trim().split("[+]");
             sign = 1;
-
         } else if (number.contains("-")) {
             str = number.trim().split("[-]");
             sign = 2;
@@ -117,7 +116,9 @@ public class Main {
         } else if (number.contains("/")) {
             str = number.trim().split("[/]");
             sign = 4;
-        } else sign = 0;
+        } else {
+            sign = 0;
+        }
         return sign;
     }
 
